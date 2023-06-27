@@ -24,18 +24,14 @@ public class Command implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String label, String[] args) {
         World world = getWorld(sender);
-        System.out.println(world);
         switch (label) {
             case "bs":
             case "buildsave":
-                if (!LoadStructure.structureRegistered(args[0])) RegisterStructure.register(args);
-                SaveStructure.save(args[0],0,new Location(world,parseInt(args[1]),parseInt(args[2]),parseInt(args[3])));
+                SaveStructure.command(args,world);
                 break;
             case "bl":
             case "buildload":
-                if (LoadStructure.structureRegistered(args[0])) {
-                    LoadStructure.load(args[0],0,new Location(world, parseInt(args[1]),parseInt(args[2]),parseInt(args[3])));
-                }
+                LoadStructure.command(args, world);
                 break;
             case "sw":
             case "switchworld":
