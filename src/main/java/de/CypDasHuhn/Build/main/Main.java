@@ -13,13 +13,13 @@ public class Main extends JavaPlugin {
         }
         plugin = this;
 
-        String[] commands = {"test","setstructure","buildsave","switchworld"};
+        String[] commands = {"test","setstructure","buildsave","switchworld","buildload"};
         for (String a : commands) {
             getCommand(a).setExecutor(new Command());
             getCommand(a).setTabCompleter(new TabComp());
         }
 
-        if (!SetWorld.worldGenerated()) SetWorld.setWorld();
+        if (!SetWorld.generated()) SetWorld.generate();
     }
 
     public static Main getPlugin(){

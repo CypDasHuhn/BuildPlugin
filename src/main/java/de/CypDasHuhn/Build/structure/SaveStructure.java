@@ -1,49 +1,37 @@
 package de.CypDasHuhn.Build.structure;
 
 import de.CypDasHuhn.Build.CustomFiles;
+import de.CypDasHuhn.Build.world.SetPlates;
+import de.CypDasHuhn.Build.world.SetStructure;
 import de.CypDasHuhn.Build.world.SetWorld;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
-import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 
 public class SaveStructure {
-    public static void saveStructure(String name, Location location1) {
+    public static void save(String name, int frame, Location originLocation) {
         CustomFiles[] customFiles = CustomFiles.getCustomFiles(1);
-        FileConfiguration sConfig = customFiles[0].gfc(name, "");
+        FileConfiguration sConfig = customFiles[0].gfc(name, "structures");
 
         int structureId = sConfig.getInt("ID");
         int sizeX = sConfig.getInt("size.x");
         int sizeY = sConfig.getInt("size.y");
         int sizeZ = sConfig.getInt("size.z");
+        int[] size = {sizeX,sizeY,sizeZ};
 
-        Location location2 = new Location(location1.getWorld(), location1.getX() + sizeX, location1.getY() + sizeY, location1.getZ() + sizeZ);
-
-        World targetWorld = Bukkit.getWorld(SetWorld.worldName);
-        int xCoord = structureId * 16;
-        int yCoord = -60;
-        int zCoord = 0;
-
-        for (int x = 0; x <= sizeX; x++) {
-            for (int y = 0; y <= sizeY; y++) {
-                for (int z = 0; z <= sizeZ; z++) {
-                    Location targetLocation = new Location(targetWorld, xCoord + x, yCoord + y, zCoord + z);
-                    System.out.println(targetLocation);
-                    targetLocation.getBlock().setType(Material.RED_STAINED_GLASS);
-                    Block targetBlock = location1.getWorld().getBlockAt(location1.getBlockX() + x, location1.getBlockY() + y, location1.getBlockZ() + z);
-                    setBlock(targetLocation, targetBlock);
-                }
+        if (sConfig.getInt("frame") < frame) {
+            for (int i = sConfig.getInt("frame")+1; i < frame; i++) {
+                SetPlates.generate(name,i);
             }
+            sConfig.set("frame",frame);
+            customFiles[0].save();
         }
-    }
 
+        int xCoord = structureId*16;
+        int yCoord = (frame % 22) * 17 + 1;
+        int zCoord = (int)(Math.floor(frame / 22) * 16);
+        Location targetLocation = new Location(Bukkit.getWorld(SetWorld.worldName),xCoord,yCoord,zCoord);
 
-
-
-    public static void setBlock(Location location, Block targetBlock) {
-        location.getBlock().setType(targetBlock.getType());
-        location.getBlock().setBlockData(targetBlock.getBlockData());
+        SetStructure.set(targetLocation,originLocation,size);
     }
 }

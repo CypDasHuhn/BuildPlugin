@@ -17,8 +17,7 @@ public class RegisterStructure {
         int z2 = parseInt(args[6]);
 
         CustomFiles[] customFiles = CustomFiles.getCustomFiles(2);
-        Bukkit.broadcastMessage(name);
-        FileConfiguration sConfig = customFiles[0].gfc(name,"");
+        FileConfiguration sConfig = customFiles[0].gfc(name,"structures");
         FileConfiguration dConfig = customFiles[1].gfc("StructureData","");
 
         int amount = dConfig.getInt("amount");
@@ -31,6 +30,7 @@ public class RegisterStructure {
         sConfig.set("size.x",Math.abs(x1-x2));
         sConfig.set("size.y",Math.abs(y1-y2));
         sConfig.set("size.z",Math.abs(z1-z2));
+
         CustomFiles.saveArray(customFiles);
     }
 }

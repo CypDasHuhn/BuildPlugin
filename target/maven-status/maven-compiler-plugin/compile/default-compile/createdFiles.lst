@@ -1,0 +1,11 @@
+de\CypDasHuhn\Build\world\SetPlates.class
+de\CypDasHuhn\Build\commands\TabComp.class
+de\CypDasHuhn\Build\structure\RegisterStructure.class
+de\CypDasHuhn\Build\world\SetStructure.class
+de\CypDasHuhn\Build\world\SetWorld.class
+de\CypDasHuhn\Build\commands\Command.class
+de\CypDasHuhn\Build\CustomFiles.class
+de\CypDasHuhn\Build\structure\SaveStructure.class
+de\CypDasHuhn\Build\main\Main.class
+de\CypDasHuhn\Build\world\SwitchWorld.class
+de\CypDasHuhn\Build\structure\LoadStructure.class
