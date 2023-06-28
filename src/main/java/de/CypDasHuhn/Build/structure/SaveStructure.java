@@ -20,7 +20,10 @@ public class SaveStructure {
         }
         int frame = 0;
         if (args.length == 5) {
-            if (args[4].equals("+")) args[4] = String.valueOf(LoadStructure.nextFrame(args[0]));
+            if (args[4].equals("+")) {
+                Bukkit.broadcastMessage("Test");
+                args[4] = String.valueOf(LoadStructure.nextFrame(args[0]));
+            }
             frame = parseInt(args[4]);
         }
         SaveStructure.save(args[0], frame, new Location(world, parseInt(args[1]), parseInt(args[2]), parseInt(args[3])));
