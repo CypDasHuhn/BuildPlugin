@@ -7,12 +7,12 @@ import org.bukkit.configuration.file.FileConfiguration;
 import static java.lang.Integer.parseInt;
 
 public class RegisterStructure {
-    public static void register(String[] args) {
+    public static String register(String[] args) {
         String name = args[0];
         int sizeX = Math.abs(parseInt(args[1]) - parseInt(args[2]));
         int sizeY = Math.abs(parseInt(args[3]) - parseInt(args[5]));
         int sizeZ = Math.abs(parseInt(args[5]) - parseInt(args[6]));
-        if (sizeX > 16 || sizeY > 16 || sizeZ > 16) return;
+        if (sizeX > 16 || sizeY > 16 || sizeZ > 16) return "to_large_bs";
 
         CustomFiles[] customFiles = CustomFiles.getCustomFiles(2);
         FileConfiguration sConfig = customFiles[0].gfc(name, "structures");
@@ -30,5 +30,6 @@ public class RegisterStructure {
         sConfig.set("size.z", sizeZ);
 
         CustomFiles.saveArray(customFiles);
+        return null;
     }
 }

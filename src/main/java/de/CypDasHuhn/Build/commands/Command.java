@@ -1,6 +1,7 @@
 package de.CypDasHuhn.Build.commands;
 
 import de.CypDasHuhn.Build.CustomFiles;
+import de.CypDasHuhn.Build.message.Message;
 import de.CypDasHuhn.Build.structure.LoadStructure;
 import de.CypDasHuhn.Build.structure.RegisterStructure;
 import de.CypDasHuhn.Build.structure.SaveStructure;
@@ -23,15 +24,14 @@ import static java.lang.Integer.parseInt;
 public class Command implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String label, String[] args) {
-        World world = getWorld(sender);
         switch (label) {
             case "bs":
             case "buildsave":
-                SaveStructure.command(args,world);
+                Message.send(sender,SaveStructure.command(args,sender));
                 break;
             case "bl":
             case "buildload":
-                LoadStructure.command(args, world);
+                Message.send(sender,LoadStructure.command(args,sender));
                 break;
             case "sw":
             case "switchworld":
@@ -43,7 +43,7 @@ public class Command implements CommandExecutor {
             case "test":
                 CustomFiles[] customFiles = CustomFiles.getCustomFiles(1);
                 FileConfiguration config = customFiles[0].gfc("Test", "test/weiterTest");
-                config.set("Hallo","Lol");
+                config.set("Hallo", "Lol");
                 customFiles[0].save();
 
                 break;

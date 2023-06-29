@@ -1,35 +1,38 @@
 package de.CypDasHuhn.Build.structure;
 
 import de.CypDasHuhn.Build.CustomFiles;
+import de.CypDasHuhn.Build.commands.Command;
+import de.CypDasHuhn.Build.message.Message;
 import de.CypDasHuhn.Build.world.SetPlates;
 import de.CypDasHuhn.Build.world.SetStructure;
 import de.CypDasHuhn.Build.world.SetWorld;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 
 import static java.lang.Integer.parseInt;
 
 public class SaveStructure {
-    public static void command(String[] args, World world) {
-        if (args.length < 4) return;
+    public static String command(String[] args, CommandSender sender) {
+        World world = Command.getWorld(sender);
+        if (args.length < 4) return "short_argument_bs";
         if (!LoadStructure.structureRegistered(args[0])) {
-            if (args.length < 7) return;
-            RegisterStructure.register(args);
+            if (args.length < 7) return "long_argument_bs";
+            Message.send(sender, RegisterStructure.register(args));
         }
         int frame = 0;
         if (args.length == 5) {
-            if (args[4].equals("+")) {
-                Bukkit.broadcastMessage("Test");
-                args[4] = String.valueOf(LoadStructure.nextFrame(args[0]));
-            }
+            if (args[4].equals("+")) args[4] = String.valueOf(LoadStructure.nextFrame(args[0]));
             frame = parseInt(args[4]);
         }
-        SaveStructure.save(args[0], frame, new Location(world, parseInt(args[1]), parseInt(args[2]), parseInt(args[3])));
+        Message.send(sender,SaveStructure.save(args[0], frame, new Location(world, parseInt(args[1]), parseInt(args[2]), parseInt(args[3])),sender));
+        return null;
     }
 
-    public static void save(String name, int frame, Location originLocation) {
+    public static String save(String name, int frame, Location originLocation, CommandSender sender) {
         CustomFiles[] customFiles = CustomFiles.getCustomFiles(1);
         FileConfiguration sConfig = customFiles[0].gfc(name, "structures");
 
@@ -54,5 +57,6 @@ public class SaveStructure {
         Location targetLocation = new Location(Bukkit.getWorld(SetWorld.worldName), xCoord, yCoord, zCoord);
 
         SetStructure.set(targetLocation, originLocation, size);
+        return "succesfull_bs";
     }
 }

@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 public class SwitchWorld {
     public static void switchWorld(Player player) {
-        Message.send(player,"welcome_message");
+        Message.send(player,"teleport_sw");
         Location location = player.getLocation();
         if (location.getWorld().getName().equals(SetWorld.worldName)) {
             location.setWorld(Bukkit.getWorld("world"));

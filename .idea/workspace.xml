@@ -5,21 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97d3242e-31a7-45df-a6a4-6b6b8734a902" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/message/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/message/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_en.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/AnimateStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/AnimateStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/message/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/LoadStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/LoadStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/RegisterStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/RegisterStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/SaveStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/SaveStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/world/SwitchWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/world/SwitchWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/RegisterStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/RegisterStructure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/SaveStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/SaveStructure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/world/SwitchWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/world/SwitchWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_en.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +68,20 @@
       <option name="project" value="LOCAL" />
       <updated>1687885391702</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added a way for message localization and sending">
+      <created>1687949334252</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687949334252</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Raw" />
     <MESSAGE value="Buildsave and Buildload added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Buildsave and Buildload added" />
+    <MESSAGE value="Added a way for message localization and sending" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a way for message localization and sending" />
   </component>
 </project>
