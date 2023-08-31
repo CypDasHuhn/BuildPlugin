@@ -4,14 +4,18 @@ import de.CypDasHuhn.Build.commands.Command;
 import de.CypDasHuhn.Build.commands.TabComp;
 import de.CypDasHuhn.Build.world.SetWorld;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.structure.StructureManager;
 
 public class Main extends JavaPlugin {
     private static Main plugin;
+    private static StructureManager structureManager;
+
     public void onEnable(){
         if (!getDataFolder().exists()) {
             getDataFolder().mkdirs();
         }
         plugin = this;
+        structureManager = getServer().getStructureManager();
 
         String[] commands = {"test","setstructure","buildsave","switchworld","buildload"};
         for (String a : commands) {
@@ -25,4 +29,8 @@ public class Main extends JavaPlugin {
     public static Main getPlugin(){
         return plugin;
     }
+    public static StructureManager getStructureManager(){
+        return structureManager;
+    }
+
 }

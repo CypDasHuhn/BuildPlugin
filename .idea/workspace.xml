@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97d3242e-31a7-45df-a6a4-6b6b8734a902" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/message/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/LoadStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/LoadStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/RegisterStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/RegisterStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/SaveStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/structure/SaveStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/world/SwitchWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/CypDasHuhn/Build/world/SwitchWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/commands/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/commands/Command.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/LoadStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/LoadStructure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/RegisterStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/RegisterStructure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/SaveStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/structure/SaveStructure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/world/SwitchWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/CypDasHuhn/Build/world/SwitchWorld.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +41,13 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP OMEN/Desktop/Krasse Sachen (wow)/workspace/#KitPlugin&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/HP OMEN/Documents/GitHub/BuildOldPlugin"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,13 +78,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687949334252</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added messages">
+      <created>1688060029387</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688060029388</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Raw" />
     <MESSAGE value="Buildsave and Buildload added" />
     <MESSAGE value="Added a way for message localization and sending" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a way for message localization and sending" />
+    <MESSAGE value="Added messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added messages" />
   </component>
 </project>

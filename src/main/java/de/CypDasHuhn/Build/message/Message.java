@@ -14,8 +14,7 @@ public class Message {
     }
 
     public static void send(CommandSender sender, String message) {
-        if ((!(sender instanceof Player)) || message == null) return;
-        Player player = (Player) sender;
+        if ((!(sender instanceof Player player)) || message == null) return;
         ResourceBundle messagesBundle = ResourceBundle.getBundle("messages", Language.getLocale(player));
         String localizedMessage = messagesBundle.getString(message);
         player.sendMessage(localizedMessage);

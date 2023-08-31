@@ -1,18 +1,27 @@
 package de.CypDasHuhn.Build.structure;
 
 import de.CypDasHuhn.Build.CustomFiles;
-import org.bukkit.Bukkit;
+import de.CypDasHuhn.Build.commands.Command;
+import de.CypDasHuhn.Build.message.Message;
+import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import static java.lang.Integer.parseInt;
 
 public class RegisterStructure {
-    public static String register(String[] args) {
+    public static void register(String[] args, CommandSender sender) {
         String name = args[0];
-        int sizeX = Math.abs(parseInt(args[1]) - parseInt(args[2]));
-        int sizeY = Math.abs(parseInt(args[3]) - parseInt(args[5]));
-        int sizeZ = Math.abs(parseInt(args[5]) - parseInt(args[6]));
-        if (sizeX > 16 || sizeY > 16 || sizeZ > 16) return "to_large_bs";
+
+        World world = Command.getWorld(sender);
+
+        Location cornerA = new Location(world, parseInt(args[1]), parseInt(args[2]), parseInt(args[3]));
+        Location cornerB = new Location(world, parseInt(args[4]), parseInt(args[5]), parseInt(args[6]));
+
+        if (illegalSize(cornerA,cornerB)) {
+            Message.send(sender, "to_large");
+        }
 
         CustomFiles[] customFiles = CustomFiles.getCustomFiles(2);
         FileConfiguration sConfig = customFiles[0].gfc(name, "structures");
@@ -25,11 +34,18 @@ public class RegisterStructure {
 
         sConfig.set("ID", amount + 1);
         sConfig.set("type", "standing");
-        sConfig.set("size.x", sizeX);
-        sConfig.set("size.y", sizeY);
-        sConfig.set("size.z", sizeZ);
 
         CustomFiles.saveArray(customFiles);
-        return null;
+
+        SaveStructure.save(name, 0, cornerA, sender, cornerB);
+    }
+
+    public static boolean illegalSize(Location cornerA, Location cornerB) {
+        return (
+                Math.abs(cornerA.getBlockX()-cornerB.getBlockX()) > 48 ||
+                        Math.abs(cornerA.getBlockY()-cornerB.getBlockY()) > 48 ||
+                        Math.abs(cornerA.getBlockZ()-cornerB.getBlockZ()) > 48
+        );
     }
 }
+

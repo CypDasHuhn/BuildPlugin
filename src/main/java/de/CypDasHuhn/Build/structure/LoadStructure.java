@@ -59,4 +59,8 @@ public class LoadStructure {
         FileConfiguration sConfig = customFiles[0].gfc(name, "structures");
         return sConfig.getInt("frame") + 1;
     }
+
+    public static int[] getSize(String name) {
+        return null;
+    }
 }
